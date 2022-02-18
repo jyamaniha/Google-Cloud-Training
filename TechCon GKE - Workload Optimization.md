@@ -109,9 +109,9 @@ sed 's/${GOOGLE_CLOUD_PROJECT}/'$GOOGLE_CLOUD_PROJECT'/g' locust_deploy.yaml | k
 kubectl get service locust-master
 ```
 
+## Liveness Demo
 
-
-
+```yaml
 cat << EOF > liveness-demo.yaml
 apiVersion: v1
 kind: Pod
@@ -135,6 +135,7 @@ spec:
       initialDelaySeconds: 5
       periodSeconds: 10
 EOF
+```
 
 kubectl describe pod liveness-demo-pod
 
